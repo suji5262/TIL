@@ -31,14 +31,13 @@ back quote - 인용표현/ 하이라이트
 
 add - commit - push 순으로
 
-파일 올리기 예시
-
-1. touch test.txt
-2. vi test.txt
-3. git status(확인)
-4. git add test.txt
-5. git status
-6. git commit 
-7. git push(-파일이 한개 이상일 경우 - git puch origin main)
+> ☆ 파일 올리기 예시
+> 1. touch test.txt
+> 2. vi test.txt
+> 3. git status(확인)
+> 4. git add test.txt
+> 5. git status
+> 6. git commit 
+> 7. git push(-파일이 한개 이상일 경우 - git puch origin main)
 
 
