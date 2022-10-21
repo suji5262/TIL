@@ -7,7 +7,7 @@ import me.smartstore.project.exception.InputRangeException;
 import me.smartstore.project.groups.Groups;
 import me.smartstore.project.util.ErrorMessage;
 
-public class SummarizedMenu extends Menu {
+public class SummarizedMenu extends smartStore2.src.me.smartstore.project.menu.Menu {
 
     private static SummarizedMenu classifiedMenu;
     private final Groups allGroups = Groups.getInstance();
@@ -34,7 +34,7 @@ public class SummarizedMenu extends Menu {
                 System.out.println(" 5. Back");
                 System.out.println("==============================");
                 System.out.print("Choose One: ");
-                int choice = Integer.parseInt(Menu.sc.next());
+                int choice = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (choice >= 1 && choice <= 5) {
                     return choice;
                 }
@@ -88,11 +88,11 @@ public class SummarizedMenu extends Menu {
             }
 
             try {
-                OrderType orderType = OrderType.valueOf(strOrder);
-                if (orderType == OrderType.ASCENDING) {
-                    classifiedCustomersGroup.sortByName(OrderType.ASCENDING);
+                smartStore2.src.me.smartstore.project.menu.OrderType orderType = smartStore2.src.me.smartstore.project.menu.OrderType.valueOf(strOrder);
+                if (orderType == smartStore2.src.me.smartstore.project.menu.OrderType.ASCENDING) {
+                    classifiedCustomersGroup.sortByName(smartStore2.src.me.smartstore.project.menu.OrderType.ASCENDING);
                 } else {
-                    classifiedCustomersGroup.sortByName(OrderType.DESCENDING);
+                    classifiedCustomersGroup.sortByName(smartStore2.src.me.smartstore.project.menu.OrderType.DESCENDING);
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("\n" + ErrorMessage.ERR_MSG_INVALID_INPUT_TYPE);
@@ -110,11 +110,11 @@ public class SummarizedMenu extends Menu {
             }
 
             try {
-                OrderType orderType = OrderType.valueOf(strOrder);
-                if (orderType == OrderType.ASCENDING) {
-                    classifiedCustomersGroup.sortedBySpentTime(OrderType.ASCENDING);
+                smartStore2.src.me.smartstore.project.menu.OrderType orderType = smartStore2.src.me.smartstore.project.menu.OrderType.valueOf(strOrder);
+                if (orderType == smartStore2.src.me.smartstore.project.menu.OrderType.ASCENDING) {
+                    classifiedCustomersGroup.sortedBySpentTime(smartStore2.src.me.smartstore.project.menu.OrderType.ASCENDING);
                 } else {
-                    classifiedCustomersGroup.sortedBySpentTime(OrderType.DESCENDING);
+                    classifiedCustomersGroup.sortedBySpentTime(smartStore2.src.me.smartstore.project.menu.OrderType.DESCENDING);
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("\n" + ErrorMessage.ERR_MSG_INVALID_INPUT_TYPE);
@@ -132,11 +132,11 @@ public class SummarizedMenu extends Menu {
             }
 
             try {
-                OrderType orderType = OrderType.valueOf(strOrder);
-                if (orderType == OrderType.ASCENDING) {
-                    classifiedCustomersGroup.sortedByTotalPay(OrderType.ASCENDING);
+                smartStore2.src.me.smartstore.project.menu.OrderType orderType = smartStore2.src.me.smartstore.project.menu.OrderType.valueOf(strOrder);
+                if (orderType == smartStore2.src.me.smartstore.project.menu.OrderType.ASCENDING) {
+                    classifiedCustomersGroup.sortedByTotalPay(smartStore2.src.me.smartstore.project.menu.OrderType.ASCENDING);
                 } else {
-                    classifiedCustomersGroup.sortedByTotalPay(OrderType.DESCENDING);
+                    classifiedCustomersGroup.sortedByTotalPay(smartStore2.src.me.smartstore.project.menu.OrderType.DESCENDING);
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("\n" + ErrorMessage.ERR_MSG_INVALID_INPUT_TYPE);
@@ -151,7 +151,7 @@ public class SummarizedMenu extends Menu {
                 System.out.println();
                 System.out.println("** Press 'end', if you want to exit! **");
                 System.out.print("Which order (ASCENDING, DESCENDING)? ");
-                String choice = Menu.sc.next().toUpperCase();
+                String choice = smartStore2.src.me.smartstore.project.menu.Menu.sc.next().toUpperCase();
                 if (choice == null) {
                     throw new NullPointerException();
                 }
@@ -165,10 +165,10 @@ public class SummarizedMenu extends Menu {
                 }
 
                 try {
-                    OrderType orderType = OrderType.valueOf(choice);
+                    smartStore2.src.me.smartstore.project.menu.OrderType orderType = smartStore2.src.me.smartstore.project.menu.OrderType.valueOf(choice);
 
-                    for (int i = 0; i < OrderType.values().length; ++i) {
-                        if (orderType == OrderType.values()[i]) {
+                    for (int i = 0; i < smartStore2.src.me.smartstore.project.menu.OrderType.values().length; ++i) {
+                        if (orderType == smartStore2.src.me.smartstore.project.menu.OrderType.values()[i]) {
                             return choice;
                         }
                     }

@@ -11,7 +11,7 @@ import me.smartstore.project.util.ErrorMessage;
 
 import java.util.regex.Pattern;
 
-public class CusMenu extends Menu {
+public class CusMenu extends smartStore2.src.me.smartstore.project.menu.Menu {
 
     private static CusMenu customerMenu;
     private final Groups allGroups = Groups.getInstance();
@@ -152,7 +152,7 @@ public class CusMenu extends Menu {
                 System.out.println(" 5. Back");
                 System.out.println("==============================");
                 System.out.print("Choose One: ");
-                int choice = Integer.parseInt(Menu.sc.next());
+                int choice = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (choice >= 1 && choice <= 5) {
                     return choice;
                 }
@@ -172,7 +172,7 @@ public class CusMenu extends Menu {
                 System.out.println();
                 System.out.println("** Press -1, if you want to exit! **");
                 System.out.print("How many customers to input? ");
-                int size = Integer.parseInt(Menu.sc.next());
+                int size = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (size < 0) {
                     throw new InputRangeException();
                 }
@@ -197,7 +197,7 @@ public class CusMenu extends Menu {
                 System.out.println(" 5. Back");
                 System.out.println("==============================");
                 System.out.print("Choose One: ");
-                int choice = Integer.parseInt(Menu.sc.next());
+                int choice = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (choice >= 1 && choice <= 5) {
                     return choice;
                 }
@@ -218,7 +218,7 @@ public class CusMenu extends Menu {
                 System.out.println();
                 System.out.print("Input Customer's Name: ");
                 String REGEX = "^[a-zA-Z]{3,}$";
-                String name = Menu.sc.next();
+                String name = smartStore2.src.me.smartstore.project.menu.Menu.sc.next();
                 if (name != null && !name.equals("")) {
                     if (Pattern.matches(REGEX, name)) {
                         customer.setName(name);
@@ -243,7 +243,7 @@ public class CusMenu extends Menu {
                 System.out.println();
                 System.out.print("Input Customer's UserID: ");
                 String REGEX = "^[a-zA-Z]{1}[a-zA-Z0-9_]{4,11}$";
-                String userID = Menu.sc.next();
+                String userID = smartStore2.src.me.smartstore.project.menu.Menu.sc.next();
                 if (userID != null && !userID.equals("")) {
                     if (Pattern.matches(REGEX, userID)) {
                         customer.setUserID(userID);
@@ -268,7 +268,7 @@ public class CusMenu extends Menu {
             try {
                 System.out.println();
                 System.out.print("Input Customer's Spent Time at Your Store: ");
-                int spentTime = Integer.parseInt(Menu.sc.next());
+                int spentTime = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (spentTime < 0) {
                     throw new InputRangeException();
                 }
@@ -288,7 +288,7 @@ public class CusMenu extends Menu {
             try {
                 System.out.println();
                 System.out.print("Input Customer's Total Payment at Your Store: ");
-                int totalPay = Integer.parseInt(Menu.sc.next());
+                int totalPay = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (totalPay < 0) {
                     new InputRangeException();
                 }
@@ -308,7 +308,7 @@ public class CusMenu extends Menu {
             try {
                 System.out.println();
                 System.out.print("Which customer ( 1 ~ " + allCustCount + " )? ");
-                int custNo = Integer.parseInt(Menu.sc.next());
+                int custNo = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 return custNo;
             } catch (NumberFormatException e) {
                 System.out.println("\n" + ErrorMessage.ERR_MSG_INVALID_INPUT_FORMAT);

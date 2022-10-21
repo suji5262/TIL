@@ -11,7 +11,7 @@ import me.smartstore.project.util.ErrorMessage;
 
 import java.util.InputMismatchException;
 
-public class GroupMenu extends Menu {
+public class GroupMenu extends smartStore2.src.me.smartstore.project.menu.Menu {
 
     private static GroupMenu groupMenu;
     private final Groups allGroups = Groups.getInstance();
@@ -30,7 +30,7 @@ public class GroupMenu extends Menu {
                 System.out.println();
                 System.out.println("** Press 'end', if you want to exit! **");
                 System.out.print("Which group (GENERAL, VIP, VVIP)? ");
-                String choice = Menu.sc.next().toUpperCase();
+                String choice = smartStore2.src.me.smartstore.project.menu.Menu.sc.next().toUpperCase();
                 if (choice == null) {
                     throw new NullPointerException();
                 }
@@ -71,7 +71,7 @@ public class GroupMenu extends Menu {
                 System.out.println(" 4. Back");
                 System.out.println("==============================");
                 System.out.print("Choose One: ");
-                int choice = Integer.parseInt(Menu.sc.next());
+                int choice = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (choice >= 1 && choice <= 4) {
                     return choice;
                 }
@@ -224,7 +224,7 @@ public class GroupMenu extends Menu {
                 System.out.println(" 3. Back");
                 System.out.println("==============================");
                 System.out.print("Choose One: ");
-                int choice = Integer.parseInt(Menu.sc.next());
+                int choice = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (choice >= 1 && choice <= 3) {
                     return choice;
                 }
@@ -243,7 +243,7 @@ public class GroupMenu extends Menu {
             try {
                 System.out.println();
                 System.out.print("Input Minimum Spent Time: ");
-                int minimumSpentTime = Integer.parseInt(Menu.sc.next());
+                int minimumSpentTime = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (minimumSpentTime < 0) {
                     throw new InputRangeException();
                 }
@@ -263,7 +263,7 @@ public class GroupMenu extends Menu {
             try {
                 System.out.println();
                 System.out.print("Input Minimum Total Pay: ");
-                int minimumTotalPay = Integer.parseInt(Menu.sc.next());
+                int minimumTotalPay = Integer.parseInt(smartStore2.src.me.smartstore.project.menu.Menu.sc.next());
                 if (minimumTotalPay < 0) {
                     throw new InputRangeException();
                 }
